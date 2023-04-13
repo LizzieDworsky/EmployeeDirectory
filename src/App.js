@@ -1,9 +1,10 @@
 import "./App.css";
+import EmployeeDirectory from "./components/EmployeeDirectory";
 
 function App() {
     return (
-        <div className="App">
-            <h1>Hello</h1>
+        <div>
+            <EmployeeDirectory />
         </div>
     );
 }
