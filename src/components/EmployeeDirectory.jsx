@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import localData from "../localData";
 
 const EmployeeDirectory = (props) => {
+    const [isSelected, setIsSelected] = useState(false);
+
+    function handleSelection() {
+        setIsSelected(!isSelected);
+    }
+
     return (
         <div>
             {localData.map((employee) => (
                 <div key={employee.id}>
                     <img
-                        className="employee-img"
+                        onClick={(e) => handleSelection()}
+                        className={
+                            isSelected
+                                ? "selected-employee-img"
+                                : "employee-img"
+                        }
                         src={employee.image}
                         alt="employee's picture"
                     />
